@@ -1,20 +1,40 @@
 /* public/style.css */
-body {
-  font-family: Arial, sans-serif;
+
+/* Reset default styles */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+p,
+button {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
+/* Set default font family */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Container for the entire chat */
 #container {
   display: flex;
   height: 100vh;
 }
 
+/* Sidebar for channel switcher */
 #sidebar {
   width: 25%;
   background-color: #f0f0f0;
 }
 
+/* Main chat area */
 #chat {
   width: 75%;
   padding: 10px;
@@ -23,6 +43,7 @@ body {
   flex-direction: column;
 }
 
+/* Container for all messages */
 #messages {
   border: 1px solid #ccc;
   flex-grow: 1;
@@ -30,24 +51,65 @@ body {
   padding: 10px;
 }
 
-.message {
-  margin-bottom: 10px;
+/* Profile picture */
+.profile-picture {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: #007bff; /* You can adjust the background color */
+  color: #fff;
+  text-align: center;
+  line-height: 40px; /* Vertically center the text */
+  float: left; /* Align the profile picture to the left */
+  margin-right: 10px; /* Add some space between the profile picture and the message */
+  margin-top: 5px; /* Add some top margin */
 }
 
-.message p {
-  margin: 5px 0;
+/* Message content */
+.message-content {
+  font-size: 16px; /* Adjust font size as needed */
+  background-color: #f4f4f4; /* Background color for the message */
+  padding: 10px; /* Add padding for better spacing */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  overflow-wrap: break-word; /* Ensure long messages wrap correctly */
+  max-width: calc(100% - 50px); /* Limit message width */
+  margin-bottom: 5px; /* Add some space between the message and the timestamp */
+  float: left; /* Align the message content to the left */
 }
 
-#message-input {
-  margin-top: 10px;
-  padding: 5px;
+/* Timestamp */
+.message-timestamp {
+  font-size: 12px; /* Adjust font size as needed */
+  color: #999; /* Color for the timestamp */
+  clear: both; /* Ensure timestamp is placed below the message content */
+  display: block; /* Make the timestamp a block-level element */
+  margin-top: 5px; /* Add some top margin */
+  margin-left: 50px; /* Adjust left margin to match the message content */
 }
 
+/* Sent message */
+.sent-message {
+  margin-bottom: 10px; /* Add some space between messages */
+}
+
+/* Received message */
+.received-message {
+  margin-bottom: 10px; /* Add some space between messages */
+}
+
+/* Send button */
 #send-button {
   margin-top: 10px;
-  padding: 5px 10px;
+  margin-left: 10px; /* Add left margin for better spacing */
+  padding: 8px 20px; /* Adjust padding as needed */
   background-color: #007bff;
   color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+#send-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
